@@ -1,0 +1,65 @@
+func first(x', y', z')
+{ T }
+  return x';
+func second(x'', y'', z'') local (a')
+  (
+{ T }
+    a' = 0;
+{ -a' ≤ 0 /\ a' ≤ 0 }
+    a' = first(y'', z'', x'');
+    return a'
+{ 1 ≤ 0 }
+  );
+func third(x''', y''', z''') local (a'')
+  (
+{ T }
+    a'' = 0;
+{ -a'' ≤ 0 /\ a'' ≤ 0 }
+    a'' = second(y''', z''', x''');
+    return a''
+{ 1 ≤ 0 }
+  );
+func iter(x'''', y'''', z'''') local (a''', b', c')
+  (
+{ T }
+    a''' = first(x'''', y'''', z'''');
+{ T }
+    b' = second(x'''', y'''', z'''');
+{ T }
+    c' = third(x'''', y'''', z'''');
+{ T }
+    loop
+      (
+{ T }
+        if a''' <= b'
+{ a''' - b' ≤ 0 }
+          break;
+        a''' -= 1
+{ -a''' + b' ≤ 0 }
+      );
+{ a''' - b' ≤ 0 }
+    loop
+      (
+{ a''' - b' ≤ 0 }
+        if b' <= c'
+{ b' - c' ≤ 0 /\ a''' - b' ≤ 0 }
+          break;
+        c' += 1
+{ a''' - b' ≤ 0 /\ -b' + c' ≤ 0 }
+      );
+    loop
+      (
+{ b' - c' ≤ 0 }
+        if a''' >= c'
+{ -a''' + c' ≤ 0 /\ b' - c' ≤ 0 }
+          break;
+        a''' += 1
+{ b' - c' ≤ 0 /\ a''' - c' ≤ 0 }
+      )
+{ b' - c' ≤ 0 /\ -a''' + c' ≤ 0 }
+  );
+
+{ T }
+iter(x, y, z);
+iter(a, b, c)
+{ T }

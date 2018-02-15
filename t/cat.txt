@@ -1,0 +1,81 @@
+-- Tests for parsing, lexing, and evaluation.
+
+t01 - Trivial lexing and parsing test.
+t02 - Parsing test.
+t03 - Evaluation test.
+t04 - Evaluation test.
+t06 - Parsing of assertions and negative constants.
+t09 - Parsing of conditionals.
+
+-- Tests for the quantitative analysis.
+
+t05 - Basic test for constant assignment.
+t07 - While decreasing x, augment y, then loop on y.
+t08 - Increase a variable to some value and decrease it to 0.
+t10 - Decrease an interval by non-deterministically increasing
+      the lower bound or decreasing the upper bound.
+t13 - Maybe push one, always pop many.
+t27 - Two nested loops decreasing two related variables.
+t28 - Shift the interval [y,x] to the right while looping on x
+      then increase y up to 0. 
+
+-- Tests stressing amortization with two nested loops.
+
+t14 - Test of the assignment and decrement by a variable.
+      To succeed, the tool needs to extract potential from
+      x=x-y when y>0.
+t15 - Test for the assignment.
+      Potential needs to be moved properly between two variables
+      to realize that the complexity is linear.
+t16 - Stress test of amortization (modification of t15).
+      Two nested loops make it look quadratic but it is
+      linear because the variable of the outermost loop
+      decreases 'a lot' between two iterations.
+
+-- Tests stressing the logic.
+
+t17 - Simpler version of t18.
+      Good as a stress test for the logic.
+      Knowing m+n>0 and n<=0 we need to get m>0.
+t18 - while m+n+p > 0  ...
+      Non trivial invariant because p might become
+      negative to make the sum go to 0.
+
+-- Other.
+
+t19 - Invariant pasting.
+      Two loops follow each other, the tool is able to
+      paste bounds of the two loops.
+t20 - Test of the mirroring in the increment rule.
+      This example is only possible with proper handling
+      of 'max' potentials.
+t21 - The essence of Knuth-Morris-Pratt.
+t29 - A GCD computation algorithm.
+t30 - A loop on two variables disguised as a loop on one.
+
+-- From the literature.
+
+t11 - Dis1 on Figure 2 taken from [1].
+t12 - Dis2 on Figure 2 taken from [1].
+t22 - SimpleSingle2 example on Figure 3 taken from [1].
+t23 - (slightly modified) Gopan and Reps 2006, P.3 F.1, taken from [3].
+t24 - Example 2 on Figure 4 taken from [3].
+t25 - Example 4 on Figure 4 taken from [3].
+t26 - Inner loop of Ex1 on Figure 1 taken from [2].
+
+
+------
+
+[1] Gulwani, Mehra, Chilimbi
+  - SPEED: Precise and Efficient Static Estimation
+    of Program Computational Complexity
+  - POPL'09
+
+[2] Gulwani, Zuleger
+  - The Reachability-Bound Problem
+  - PLDI'10
+
+[3] Gulwani, Jain, Koskinen
+  - Control-flow Refinement and Progress Invariants
+    for Bound Analysis
+  - PLDI'09

@@ -1,0 +1,27 @@
+
+func id (x) local (y) (
+  y = 0;
+  return x
+);
+
+func const (x) local (y) (
+  y = -8128;
+  return y
+);
+
+func abs(a) local (x)
+  if a<0 (x = 0; x -= a; return x)
+  else ( x = id (a); return x)
+;
+
+x = id (x);
+x = id (x);
+x = abs(x);
+while x>0
+  x -= 1;
+
+
+x = const(x);
+x = abs(x);
+while x>0
+  x -= 1

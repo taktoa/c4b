@@ -1,0 +1,21 @@
+
+func count_down (x) local (a)
+( a = x;
+  if a > 0 (
+    a -= 1;
+    count_down(a) )
+);
+
+func copy (x,y) local (t)
+( if x > 0 (
+    x -= 1;
+    y += 1;
+    y=copy (x,y)
+  );
+  return y
+);
+
+
+y = copy (x,y);
+
+count_down(y)

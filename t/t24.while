@@ -1,0 +1,9 @@
+n=100; m=1;
+assert n>0;
+assert m>0;
+va = n;
+vb = 0;
+
+while va>0
+  if vb<m ( vb+=1; va-=1 )
+  else    ( vb-=1; vb=0 )

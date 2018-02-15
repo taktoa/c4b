@@ -1,0 +1,32 @@
+func iter(x') local (t)
+  (
+{ T }
+    t = x';
+{ -t + x' ≤ 0 /\ t - x' ≤ 0 }
+    loop
+      (
+{ -t + x' ≤ 0 }
+        if x' <= 0
+{ x' ≤ 0 /\ -t + x' ≤ 0 }
+          break;
+        x' -= 1
+{ -t + x' + 1 ≤ 0 /\ -x' ≤ 0 }
+      );
+    return t
+{ 1 ≤ 0 }
+  );
+
+{ T }
+x = iter(x);
+{ T }
+x = iter(x);
+loop
+  (
+{ T }
+    if x >= 1
+{ -x + 1 ≤ 0 }
+      break;
+    x += 2
+{ x - 2 ≤ 0 }
+  )
+{ -x + 1 ≤ 0 }

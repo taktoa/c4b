@@ -1,0 +1,6 @@
+assert x>0; assert y>0;
+while 1>0
+  if x<y       y-=x
+  else if y<x  x-=y
+  else         break
+

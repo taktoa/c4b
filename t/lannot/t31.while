@@ -1,0 +1,63 @@
+func id(x') local (y)
+  (
+{ T }
+    y = 0;
+    return x'
+{ 1 ≤ 0 }
+  );
+func const(x'') local (y')
+  (
+{ T }
+    y' = -8128;
+    return y'
+{ 1 ≤ 0 }
+  );
+func abs(a) local (x''')
+{ T }
+  if a < 0
+    (
+{ a + 1 ≤ 0 }
+      x''' = 0;
+{ -x''' ≤ 0 /\ x''' ≤ 0 /\ a + 1 ≤ 0 }
+      x''' -= a;
+      return x'''
+{ 1 ≤ 0 }
+    )
+  else
+    (
+{ -a ≤ 0 }
+      x''' = id(a);
+      return x'''
+{ 1 ≤ 0 }
+    );
+
+{ T }
+x = id(x);
+{ T }
+x = id(x);
+{ T }
+x = abs(x);
+{ T }
+loop
+  (
+{ T }
+    if x <= 0
+{ x ≤ 0 }
+      break;
+    x -= 1
+{ -x ≤ 0 }
+  );
+{ x ≤ 0 }
+x = const(x);
+{ T }
+x = abs(x);
+loop
+  (
+{ T }
+    if x <= 0
+{ x ≤ 0 }
+      break;
+    x -= 1
+{ -x ≤ 0 }
+  )
+{ x ≤ 0 }

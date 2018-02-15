@@ -1,0 +1,21 @@
+{ T }
+flag = 1;
+loop
+  (
+{ flag - 1 ≤ 0 }
+    if flag <= 0
+{ flag ≤ 0 /\ flag - 1 ≤ 0 }
+      break;
+    if n > 0
+      (
+{ -n + 1 ≤ 0 /\ flag - 1 ≤ 0 /\ -flag + 1 ≤ 0 }
+        n -= 1;
+        flag = 1
+{ -flag + 1 ≤ 0 /\ flag - 1 ≤ 0 /\ -n ≤ 0 /\ ?4 - 1 ≤ 0 /\ -?4 + 1 ≤ 0 }
+      )
+    else
+{ n ≤ 0 /\ flag - 1 ≤ 0 /\ -flag + 1 ≤ 0 }
+      flag = 0
+{ -flag ≤ 0 /\ flag - 1 ≤ 0 }
+  )
+{ flag ≤ 0 }

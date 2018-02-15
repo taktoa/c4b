@@ -1,0 +1,32 @@
+func swap() local (t)
+  (
+{ T }
+    t = x;
+{ -t + x ≤ 0 /\ t - x ≤ 0 }
+    x = y;
+    y = t
+{ t - y ≤ 0 /\ -t + y ≤ 0 /\ ?3 - x ≤ 0 /\ -?3 + x ≤ 0 /\ ?2 - t ≤ 0 /\ -?2 + t ≤ 0 }
+  );
+
+{ T }
+loop
+  (
+{ T }
+    if x >= 0
+{ -x ≤ 0 }
+      break;
+    x += 1
+{ x ≤ 0 }
+  );
+{ -x ≤ 0 }
+swap();
+loop
+  (
+{ T }
+    if x <= 0
+{ x ≤ 0 }
+      break;
+    x -= 1
+{ -x ≤ 0 }
+  )
+{ x ≤ 0 }

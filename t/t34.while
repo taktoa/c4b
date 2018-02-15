@@ -1,0 +1,30 @@
+
+func iter (y) local (t) (
+  t = y;
+  while t>0
+    t -= 1;
+  return t
+);
+
+func amort (x) local (y) (
+  y = 0;
+  while x>0 (
+    x -= 1;
+    y += 1;
+    if * (
+      y = iter(y);
+      y = iter(y)
+  )
+  );
+  return y
+);
+
+y = amort(x);
+
+while y > 0 (
+  y -= 1
+)
+
+
+
+

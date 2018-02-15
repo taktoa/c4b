@@ -1,0 +1,16 @@
+
+func iter (x) local (t) (
+  t = x;
+  while x>0
+    x -= 1;
+  return t
+);
+
+x = iter(x);
+x = iter(x);
+
+while x<1
+  x += 2
+
+
+

@@ -1,0 +1,33 @@
+func count_down(x') local (a)
+  (
+{ T }
+    a = x';
+    if a > 0
+      (
+{ -a + 1 ≤ 0 /\ -a + x' ≤ 0 /\ a - x' ≤ 0 }
+        a -= 1;
+        count_down(a)
+{ -a ≤ 0 /\ -a + x' - 1 ≤ 0 /\ a - x' + 1 ≤ 0 }
+      )
+{ a - x' ≤ 0 /\ -a + x' - 1 ≤ 0 }
+  );
+func copy(x'', y') local (t)
+  (
+{ T }
+    if x'' > 0
+      (
+{ -x'' + 1 ≤ 0 }
+        x'' -= 1;
+{ -x'' ≤ 0 }
+        y' += 1;
+        y' = copy(x'', y')
+{ -x'' ≤ 0 }
+      );
+    return y'
+{ 1 ≤ 0 }
+  );
+
+{ T }
+y = copy(x, y);
+count_down(y)
+{ T }

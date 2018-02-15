@@ -1,0 +1,20 @@
+func minus_one(x) local (a')
+  (
+{ T }
+    a' = x;
+{ -a' + x ≤ 0 /\ a' - x ≤ 0 }
+    a' -= 1;
+    return a'
+{ 1 ≤ 0 }
+  );
+
+loop
+  (
+{ T }
+    if a <= b
+{ a - b ≤ 0 }
+      break;
+    a = minus_one(a)
+{ T }
+  )
+{ a - b ≤ 0 }

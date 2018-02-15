@@ -1,0 +1,11 @@
+assert y > -1;
+while x - y > 0
+  (
+    x -= 1;
+    x -= y;
+    z = y;
+    z += y;
+    z += 100;
+    while z > 0
+      z -= 1
+  )

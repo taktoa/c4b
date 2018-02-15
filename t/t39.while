@@ -1,0 +1,18 @@
+
+func count_down (x,y) local (a)
+( a = x;
+  if a > y (
+    a -= 1;
+    count_up(a,y) )
+);
+
+func count_up (x,y) local (a)
+( a = y;
+  if a + 1 < x (
+    a += 2;
+    count_down(x,a) )
+);
+
+
+count_down(y,z)
+

@@ -1,0 +1,4 @@
+while m + n + p > 0
+  if m>0        m-=1
+  else if n>10  n+=-10
+  else          p-=1

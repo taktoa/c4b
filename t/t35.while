@@ -1,0 +1,37 @@
+
+func first (x,y,z) local ()
+( return x
+);
+
+func second (x,y,z) local (a)
+( a = 0;
+  a = first (y,z,x);
+  return a
+);
+
+func third (x,y,z) local (a)
+( a = 0;
+  a = second (y,z,x);
+  return a
+);
+
+func iter (x,y,z) local (a,b,c)
+(
+  a = first(x,y,z);
+  b = second(x,y,z);
+  c = third(x,y,z);
+  while a>b
+    a -= 1;
+  while b>c
+    c += 1;
+  while a<c
+    a += 1
+);
+
+iter (x,y,z);
+
+iter (a,b,c)
+
+
+
+

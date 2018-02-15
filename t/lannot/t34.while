@@ -1,0 +1,57 @@
+func iter(y') local (t)
+  (
+{ T }
+    t = y';
+{ -t + y' ≤ 0 /\ t - y' ≤ 0 }
+    loop
+      (
+{ t - y' ≤ 0 }
+        if t <= 0
+{ t ≤ 0 /\ t - y' ≤ 0 }
+          break;
+        t -= 1
+{ t - y' + 1 ≤ 0 /\ -t ≤ 0 }
+      );
+    return t
+{ 1 ≤ 0 }
+  );
+func amort(x') local (y'')
+  (
+{ T }
+    y'' = 0;
+{ -y'' ≤ 0 /\ y'' ≤ 0 }
+    loop
+      (
+{ T }
+        if x' <= 0
+{ x' ≤ 0 }
+          break;
+{ -x' + 1 ≤ 0 }
+        x' -= 1;
+{ -x' ≤ 0 }
+        y'' += 1;
+        if *
+          (
+{ -x' ≤ 0 }
+            y'' = iter(y'');
+            y'' = iter(y'')
+{ -x' ≤ 0 }
+          )
+{ -x' ≤ 0 }
+      );
+    return y''
+{ 1 ≤ 0 }
+  );
+
+{ T }
+y = amort(x);
+loop
+  (
+{ T }
+    if y <= 0
+{ y ≤ 0 }
+      break;
+    y -= 1
+{ -y ≤ 0 }
+  )
+{ y ≤ 0 }

@@ -1,0 +1,16 @@
+
+func f (x) local (a)
+( a = x;
+  while * (
+   if a > 0
+     a -= 1
+   else
+     return 100
+  );
+  return a
+);
+
+y = f(x);
+
+while y > 0
+  y -= 1

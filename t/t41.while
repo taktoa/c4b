@@ -1,0 +1,14 @@
+# mutiple recursive calls
+
+func f(x,y) local(a)
+  ( assert z >= 0
+  ; if x + z < y (
+      x+=1;
+      a=x; a+=z;
+      f(x,a);
+      f(a,y);
+      ()        # this last sequence is for weakening
+    )
+  );
+
+f(x,y)

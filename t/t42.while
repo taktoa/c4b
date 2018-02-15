@@ -1,0 +1,12 @@
+
+func down (x) local (a)
+( a = x;
+  if a > 0 (
+   a -= 1;
+   down (a);
+   t = t
+ )
+);
+
+down(x)
+

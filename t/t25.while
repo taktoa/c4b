@@ -1,0 +1,8 @@
+assert 0<m;
+i = n;
+
+while i>0
+ if i<m 
+   i-=1
+  else
+   i-=m

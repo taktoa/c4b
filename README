@@ -1,0 +1,35 @@
+C4B SOURCE CODE
+---------------
+
+This is the source code of our tool.
+
+- CODE -
+
+If you really want to do so, you can
+read Logic.ml and Hood.ml, the first
+module contains handling of logical
+contexts (\Gamma in the paper), while
+the second does contraint generation
+on the quantitative contexts (Q in
+the paper).
+
+- TESTS -
+
+While we developped the tool, we wrote
+some tests.  They turned out very
+useful to test regression.  They are
+written in a minimal imperative
+programming language whose grammar is
+described in Grammar.mly.
+
+We encourage you to read the tests in
+the t/ directory.
+
+You can run the test whole suite using
+the command:
+
+    sh t/run.sh
+
+It should make sure that the bounds of
+all the small programs are correct (the
+expected answers are stored in t/q/).

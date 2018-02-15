@@ -1,0 +1,15 @@
+
+func swap () local (t) (
+  t = x;
+  x = y;
+  y = t
+);
+
+while x<0
+  x += 1;
+
+swap ();
+
+while x>0
+  x -= 1
+

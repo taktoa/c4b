@@ -1,0 +1,35 @@
+func f(x') local (a)
+  (
+{ T }
+    a = x';
+{ -a + x' ≤ 0 /\ a - x' ≤ 0 }
+    loop
+      (
+{ a - x' ≤ 0 }
+        if *
+{ a - x' ≤ 0 }
+          break;
+        if a > 0
+{ -a + 1 ≤ 0 /\ a - x' ≤ 0 }
+          a -= 1
+        else
+{ a ≤ 0 /\ a - x' ≤ 0 }
+          return 100
+{ -a ≤ 0 /\ a - x' + 1 ≤ 0 }
+      );
+    return a
+{ 1 ≤ 0 }
+  );
+
+{ T }
+y = f(x);
+loop
+  (
+{ T }
+    if y <= 0
+{ y ≤ 0 }
+      break;
+    y -= 1
+{ -y ≤ 0 }
+  )
+{ y ≤ 0 }
